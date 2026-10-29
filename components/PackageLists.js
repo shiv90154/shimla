@@ -32,6 +32,7 @@ export function AllPackages() {
     const sp = new URLSearchParams(window.location.search);
     if (sp.get("t")) setTheme(sp.get("t"));
     if (sp.get("c")) setCat(sp.get("c"));
+    if (sp.get("q")) setQ(sp.get("q"));
   }, []);
 
   const cats = useMemo(() => ["All", ...new Set(packages.map((p) => p.category))], [packages]);

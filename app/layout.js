@@ -1,10 +1,10 @@
-import { Outfit, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Shell from "@/components/Shell";
 import { FAQS, SITE } from "@/lib/data";
 
-const body = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-body", display: "swap" });
-const head = Playfair_Display({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-head", display: "swap" });
+// One font for the whole site.
+const font = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-body", display: "swap" });
 
 const description =
   "Go Trip — Bas Nikal Pado! Book Shimla, Manali, Leh Ladakh, Kedarnath & Spiti tour packages and taxis. Temple yatra, family, friends, women special & trekking trips. Cars from Alto to Tempo Traveller, hotels 2 star to 7 star, and fully custom packages.";
@@ -29,7 +29,7 @@ export const metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
-export const viewport = { width: "device-width", initialScale: 1, themeColor: "#0c3416" };
+export const viewport = { width: "device-width", initialScale: 1, themeColor: "#0b2a4a" };
 
 const jsonLd = [
   {
@@ -57,7 +57,7 @@ const jsonLd = [
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN" className={`${body.variable} ${head.variable}`}>
+    <html lang="en-IN" className={font.variable}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Shell>{children}</Shell>

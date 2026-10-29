@@ -20,7 +20,7 @@ export default function Fleet() {
           <p>Hatchbacks to 17-seater Travellers — all AC, GPS-enabled and driven by verified drivers.</p>
         </div>
       </section>
-      <TagMarquee items={VEHICLES.map((v) => v.name)} light speed={35} />
+      <TagMarquee items={VEHICLES.map((v) => ({ label: v.name, href: `/book?type=Taxi&vehicle=${v.id}` }))} light speed={35} />
       <section className="section">
         <div className="wrap">
           {CAR_GROUPS.map((g) => (
